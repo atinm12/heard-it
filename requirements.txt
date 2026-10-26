@@ -1,0 +1,2 @@
+chromadb==1.5.9
+better-profanity==0.7.0
