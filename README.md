@@ -65,4 +65,4 @@ ChromaDB 1.5.9 (from requirements.txt). The default embedding model is all-MiniL
 
 How I used AI
 
-I used Claude in chat to plan the idea, pick the dataset, and help debug, and Claude Code to write and run the code step by step. The test-query write-up was based on notes from Claude. I tested everything myself and picked the thresholds from my own measurements.
+I planned the idea myself. I used Claude in chat to pick the dataset and help debug, and Claude Code to write and run the code step by step. The test-query write-up was based on notes from Claude. I tested everything myself and picked the thresholds from my own measurements.
