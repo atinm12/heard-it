@@ -6,11 +6,11 @@ This is a joke database that allows users to enter a joke and the database tells
 
 What's stored
 
-The data comes from a joke dataset on GitHub called stupidstuff.json, which consists of about 3800 jokes. One item is each individual joke. I only selected jokes that were clean and school-friendly, as many jokes tend to contain cruel language. Each joke contains a category which is the subject of the joke.
+The data comes from a joke dataset on GitHub called stupidstuff.json, which consists of about 3800 jokes. One item is each individual joke. I didn't break jokes into smaller pieces because they're already short — I just skipped any that were over 80 words. After filtering for clean categories, word length, and profanity, 539 jokes were loaded from the dataset. Each joke is stored with four metadata fields: source (stupidstuff for dataset jokes, user for jokes added at runtime), category (the subject of the joke), rating (the joke's score from the dataset), and family_id (a string that links different versions of the same joke together — when a user adds a variant, it gets the same family_id as the closest match so the whole group can be looked up later).
 
 How to add and search
 
-A user adds a new item by typing 1 in the console, and a user searches by entering a joke after pressing 2 and the database will check if the joke exists.
+A user adds a new item by typing 1 in the console, and a user searches by entering a joke after pressing 2 and the database will check if the joke exists. Option 1 actually checks the joke first before deciding whether to add it — it queries the 5 nearest matches and gives one of three verdicts: DUPLICATE means it's a near-exact repost and won't be added, VARIANT means it's the same idea told differently and gets added to the existing joke's family, and ORIGINAL means nothing close was found and it gets added as a new family. Either way, the top 3 closest matches are shown with their distances so you can see why the verdict was made. If the joke contains profanity it gets rejected before any of that. Option 3 shows all the versions of a joke that have been grouped into the same family, and option 4 shows stats like the total count, how many are from the dataset vs. user-added, the number of families, and the most retold joke.
 
 Proving it searches by meaning
 
